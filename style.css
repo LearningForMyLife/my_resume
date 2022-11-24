@@ -1,0 +1,432 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f9f9f9;
+}
+.wrap {
+    width: 1191px;
+    height: 1684px;
+    overflow: hidden;
+    margin: 10px auto;
+    box-shadow: 0 0 75px rgba(0, 0, 0 , 0.1);
+    border: 1px solid white;
+}
+li {
+    list-style: none;
+}
+
+header {
+    width: 100%;
+    height: 585px;
+    padding-top: 61.4px;
+    background-color: #F7E3CE;
+    display: flex;
+    justify-content: center;
+}
+
+header .my-self {
+    position: relative;
+}
+header .my-self .my-pic {
+    position: relative;
+    z-index: 3;
+    width: 478.45px;
+    height: 380.26px;
+    background-image: url('./img/頭像-去背.png');
+    background-size: 80%;
+    background-position: center;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+}
+header .my-self .block {
+    position: absolute;
+    width: 462px;
+    height: 377px;
+    background-color: #F5C9A4;
+    top: 4px;
+    left: 12px;
+    border-radius: 12px;
+    z-index: 2;
+}
+header .my-self .block:nth-child(2){
+    top: 17.4px;
+    left: 24px;
+    background-color: #EBA48C;
+    z-index: 1;
+}
+
+header .text-area {
+    width: 571px;
+    height: 438.25px;
+    margin-right: 39.9px;
+}
+header .section {
+    margin-bottom: 74.4px;
+}
+header .section h1.my-name {
+    font-size: 47px;
+    font-family: 'MicrosoftJhengHeiBold';
+    margin-bottom: 46.5px;
+}
+header .my-name span.en-name {
+    font-size: 24px;
+    font-family:'MicrosoftJhengHeiBold';
+    font-weight: bold;
+    margin-left: 33.3px;
+}
+header .intro h2.title, main .card .title {
+    font-family: '微軟正黑體';
+    font-size: 36px;
+    font-weight: bold;
+    color: #E7977B;
+    margin-bottom: 12.3px;
+}
+header .intro p.text {
+    width: 571px;
+    height: 153px;
+    text-align: justify;
+    letter-spacing: 3.87px;
+    color: #1A1311;
+    font-size: 18px;
+    line-height: 27px;
+    font-family: 'SimSun';
+}
+
+header .tags {
+    display: flex;
+    list-style: none;
+    width: 558px;
+    height: 41px;
+}
+header .tags .tag {
+    color: #1A1311;
+    font-size: 31px;
+    font-family: 'MicrosoftJhengHeiRegular';
+}
+/* main */
+main {
+    display: flex;
+    justify-content: space-between;
+    padding:0 50px;
+}
+main .card {
+    margin: 59.9px 0px 26.6px;
+    line-height: 2;
+}
+main .title {
+    position: relative;
+    z-index: 1;
+}
+.title span.en-title {
+    position: absolute;
+    font-family: Impact;
+    color: #F5C9A4;
+    font-size: 70px;
+    line-height: 84px;
+    left: 47.4px;
+    top: -39.9px;
+    z-index: -1;
+    opacity: 0.34;
+    letter-spacing: 2px;
+}
+main p.text, main li.text {
+    font-family: "MicrosoftJhengHeiRegular";
+    font-size: 23px;
+    line-height: 1.5;
+}
+main .section-right {
+    width: 594.09px;
+}
+main .section-left {
+    width: 452.05px;
+}
+/* skills */
+.skills {
+    width: 594px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px 40px;
+    flex-wrap: wrap;
+    transform: translateY(-30px);
+}
+.skill {
+    width: 240px;
+    height: 240px;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.percent {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0 , 0.1),
+    0px 0px 10px rgba(0, 0, 0 , 0.1),
+    0px 0px 15px rgba(0, 0, 0 , 0.1),
+    0px 0px 50px rgba(0, 0, 0 , 0.1),
+    inset 0px 0px 5px #fff;
+}
+.percent:before {
+    content: attr(data-text);
+    white-space: pre-line;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.percent svg {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    inset: 0px;
+    transform: rotate(270deg);
+}
+.percent svg circle {
+    position: absolute;
+    fill: transparent;
+    transform: translate(15px, 15px);
+    stroke: rgba(0, 0, 0 , 0.1);
+    stroke-width: 3;
+}
+.percent svg circle:nth-child(2){
+
+    stroke: #DF9277;
+    stroke-dasharray: 410;
+    stroke-dashoffset: calc(410 - (410 * var(--num) / 100));
+    opacity: 0;
+    animation: fade-in 1s ease-in-out 1 forwards;
+    animation-delay: 2s;
+}
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
+.percent .dot {
+    position: absolute;
+    inset: 5px;
+    z-index: 10;
+    animation: run-dot 2s ease-out 1 forwards;
+}
+@keyframes run-dot {
+    from{transform: rotate(0);}
+    to {transform: rotate(calc(3.6deg * var(--num)));}
+}
+.percent .dot::before {
+    content: '';
+    position: absolute;
+    top:3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background-color: #DF9277;
+    border-radius: 50%;
+}
+.skills p.text {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+main img.personality {
+    width: 540.71px;
+}
+main .cloud {
+    width: 490.06px;
+    height: 278.73px;
+    fill: black;
+}
+main .cloud-words {
+    font-family: "MicrosoftJhengHeiRegular";
+    display: block;
+    width: 535.36px;
+    height: 309.6px;
+    left: 0;
+    top: -367px;
+    color: #D26B50;
+    position: relative;
+}
+main .cloud-words li {
+    position: absolute;
+}
+/* cloud-words position setting */
+.cloud-words li:nth-child(1){
+    top: 70.97px;
+    left: 239px;
+}
+.cloud-words li:nth-child(2){
+    top: 170px;
+    left: 318px;
+}
+.cloud-words li:nth-child(3){
+    top: 123px;
+    left: 183px;
+}
+.cloud-words li:nth-child(4){
+    top: 51px;
+    left: 273px;
+}
+.cloud-words li:nth-child(5){
+    top: 99px;
+    left: 93px;
+}
+.cloud-words li:nth-child(6){
+    top: 35px;
+    left: 227px;
+}
+.cloud-words li:nth-child(7){
+    top: 173px;
+    left: 88px;
+}
+.cloud-words li:nth-child(8){
+    top: 199px;
+    left: 268px;
+}
+.cloud-words li:nth-child(9){
+    top: 258px;
+    left: 22px;
+}
+.cloud-words li:nth-child(10){
+    top: 144px;
+    left: 389px;
+}
+.cloud-words li:nth-child(11){
+    top: 171px;
+    left: 19px;
+}
+.cloud-words li:nth-child(12){
+    top: 97px;
+    left: 377px;
+}
+.cloud-words li:nth-child(13){
+    top: 51px;
+    left: 182px;
+}
+.cloud-words li:nth-child(14){
+    top: 236px;
+    left: 435px;
+}
+.cloud-words li:nth-child(15){
+    top: 147px;
+    left: 331px;
+}
+.cloud-words li:nth-child(16){
+    top: 204px;
+    left: 213px;
+}
+.cloud-words li:nth-child(17){
+    top: 244px;
+    left: 334px;
+}
+.cloud-words li:nth-child(18){
+    top: 53px;
+    left: 309px;
+}
+.cloud-words li:nth-child(19){
+    top: 276px;
+    left: 414px;
+}
+.cloud-words li:nth-child(20){
+    top: 178px;
+    left: 407px;
+}
+.cloud-words li:nth-child(21){
+    top: 144px;
+    left: 53px;
+}
+.cloud-words li:nth-child(22){
+    top: 171px;
+    left: 204px;
+}
+.cloud-words li:nth-child(23){
+    top: 214px;
+    left: 24px;
+}
+.cloud-words li:nth-child(24){
+    top: 227px;
+    left: 420px;
+}
+.cloud-words li:nth-child(25){
+    top: 97px;
+    left: 292px;
+}
+.cloud-words li:nth-child(26){
+    top: 77px;
+    left: 321px;
+}
+.cloud-words li:nth-child(27){
+    top: 229px;
+    left: 61px;
+}
+.cloud-words li:nth-child(28){
+    top: 85px;
+    left: 179px;
+}
+.cloud-words li:nth-child(29){
+    top: 84px;
+    left: 121px;
+}
+.cloud-words li:nth-child(30){
+    top: 39px;
+    left: 150px;
+}
+.cloud-words li:nth-child(31){
+    top: 265px;
+    left: 228px;
+}
+.cloud-words li:nth-child(32){
+    top: 250px;
+    left: 89px;
+}
+.cloud-words li:nth-child(33){
+    top: 95px;
+    left: 187px;
+}
+.cloud-words li:nth-child(34){
+    top: 242px;
+    left: 228px;
+}
+.cloud-words li:nth-child(35){
+    top: 217px;
+    left: 125px;
+}
+.lv16 {
+    font-size: 31px;
+}
+.lv12 {
+    font-size: 24px;
+}
+.lv8 {
+    font-size: 15px;
+}
+.lv5 {
+    font-size: 8px;
+}
+.lv1 {
+    font-size: 1px;
+}
+.bold {
+    font-weight: bold;
+}
+.green {
+    color: #555E49;
+}

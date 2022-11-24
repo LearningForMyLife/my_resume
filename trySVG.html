@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: monospace;
+        }
+        body {
+            min-height: 100vh;
+            overflow: hidden;
+            background-color: #eee; 
+        }
+        .skills {
+            width: 594px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px 40px;
+            flex-wrap: wrap;
+        }
+        .skill {
+            width: 240px;
+            height: 240px;
+            background-color: antiquewhite;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        .percent {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            background-color: beige;
+            border-radius: 50%;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0 , 0.1),
+            0px 0px 10px rgba(0, 0, 0 , 0.1),
+            0px 0px 15px rgba(0, 0, 0 , 0.1),
+            0px 0px 50px rgba(0, 0, 0 , 0.1),
+            inset 0px 0px 5px #fff;
+        }
+        .percent:before {
+            content: attr(data-text);
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 3;
+            /* inset: 40px; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        .percent svg {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            inset: 0px;
+            transform: rotate(270deg);
+        }
+        .percent svg circle {
+            position: absolute;
+            fill: transparent;
+            transform: translate(20px, 20px);
+            stroke: rgba(0, 0, 0 , 0.1);
+            stroke-width: 3;
+        }
+        .percent svg circle:nth-child(2){
+    
+            stroke: #DF9277;
+            stroke-dasharray: 380;
+            stroke-dashoffset: calc(380 - (380 * var(--num) / 100));
+            opacity: 0;
+            animation: fade-in 1s ease-in-out 1 forwards;
+            animation-delay: 2s;
+        }
+        @keyframes fade-in {
+            to {
+                opacity: 1;
+            }
+        }
+        .percent .dot {
+            position: absolute;
+            inset: 5px;
+            z-index: 10;
+            animation: run-dot 2s ease-out 1 forwards;
+        }
+        @keyframes run-dot {
+            from{transform: rotate(0);}
+            to {transform: rotate(calc(3.6deg * var(--num)));}
+        }
+        .percent .dot::before {
+            content: '';
+            position: absolute;
+            top:7px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 14px;
+            background-color: #DF9277;
+            border-radius: 50%;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div class="skills">
+        <div class="skill">
+        <div class="content">
+            <div class="percent" data-text="文案撰寫" style="--num:60;">
+                <div class="dot"></div>
+                <svg>
+                    <circle cx="60" cy="60" r="60"></circle>
+                    <circle cx="60" cy="60" r="60"></circle>
+                </svg>
+            </div>
+            <p class="text">能獨立撰寫廣告貼文</p>
+        </div>
+    </div>
+    <div class="skill">
+        <div class="content">
+            <div class="percent" data-text="Photoshop" style="--num:60;">
+                <div class="dot"></div>
+                <svg>
+                    <circle cx="60" cy="60" r="60"></circle>
+                    <circle cx="60" cy="60" r="60"></circle>
+                </svg>
+            </div>
+            <p class="text">熟悉工具、具人像修圖經驗</p>
+        </div>
+    </div>
+    <div class="skill">
+        <div class="content">
+            <div class="percent" data-text="illustrator" style="--num:70;">
+                <div class="dot"></div>
+                <svg>
+                    <circle cx="60" cy="60" r="60"></circle>
+                    <circle cx="60" cy="60" r="60"></circle>
+                </svg>
+            </div>
+            <p class="text">名片、具有名片設計經驗 熟悉排版技巧</p>
+        </div>
+    </div>
+    <div class="skill">
+        <div class="content">
+            <div class="percent" data-text="RWD website" style="--num:80;">
+                <div class="dot"></div>
+                <svg>
+                    <circle cx="60" cy="60" r="60"></circle>
+                    <circle cx="60" cy="60" r="60"></circle>
+                </svg>
+            </div>
+            <p class="text">熟悉網頁前端響應式設計 具有Debug能力</p>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
