@@ -108,9 +108,20 @@ header .tags .tag {
 }
 /* main */
 main {
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding:0 50px;
+    width: 100%;
+    height: calc(100% - 438.25px);
+}
+.decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
 }
 main .card {
     margin: 59.9px 0px 26.6px;
